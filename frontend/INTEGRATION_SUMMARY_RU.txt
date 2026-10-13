@@ -1,0 +1,12 @@
+Ipak Yoli Ceramica Frontend
+
+1) Распакуйте этот пакет как папку frontend рядом с папкой tiles_project.
+2) Скопируйте backend_integration/api_views.py в tiles_project/config/api_views.py.
+3) Скопируйте backend_integration/api_urls.py в tiles_project/config/api_urls.py.
+4) В tiles_project/config/urls.py добавьте include в импорт и path("api/", include("config.api_urls")) в urlpatterns.
+5) В tiles_project/config/settings.py добавьте CSRF_TRUSTED_ORIGINS для 127.0.0.1:5173 и localhost:5173.
+6) Backend: python manage.py migrate; python manage.py seed_demo (только локально, создаёт admin/admin12345); python manage.py runserver 127.0.0.1:8000.
+7) Второй терминал: cd frontend; npm install; npm run dev.
+8) Откройте http://127.0.0.1:5173 и войдите с учётной записью Django.
+
+Подробные шаги, JSON-контракты, troubleshooting и production security см. README_RU.md.
