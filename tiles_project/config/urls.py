@@ -4,6 +4,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 from django.views.generic import RedirectView
+from django.urls import include, path
 
 from sales.reports import sales_report_xlsx
 
@@ -11,6 +12,7 @@ urlpatterns = [
     path("", RedirectView.as_view(url="/admin/", permanent=False)),
     path("admin/", admin.site.urls),
     path("reports/sales.xlsx", sales_report_xlsx, name="sales-report"),
+    path("api/", include("config.api_urls")),
 ]
 
 if settings.DEBUG:
