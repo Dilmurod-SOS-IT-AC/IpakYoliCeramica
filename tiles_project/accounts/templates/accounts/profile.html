@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Личный кабинет</h2>
+<p><strong>Пользователь:</strong> {{ request.user.username }}</p>
+<p><strong>Email:</strong> {{ request.user.email }}</p>
+<p><strong>Роль:</strong> {{ request.user.profile.get_role_display }}</p>
+<p><strong>Telegram ID:</strong> {{ request.user.profile.telegram_id }}</p>
+{% endblock %}
